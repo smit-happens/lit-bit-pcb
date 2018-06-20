@@ -4911,8 +4911,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$8" gate="G$1" x="109.22" y="193.04"/>
 <instance part="3V3" gate="1" x="165.1" y="177.8" rot="R270"/>
 <instance part="SPR" gate="1" x="124.46" y="81.28" rot="R270"/>
-<instance part="R10" gate="G$1" x="170.18" y="5.08" rot="R90"/>
-<instance part="+3V1" gate="G$1" x="170.18" y="15.24"/>
+<instance part="R10" gate="G$1" x="228.6" y="22.86"/>
+<instance part="+3V1" gate="G$1" x="233.68" y="27.94"/>
 <instance part="U$1" gate="G$1" x="33.02" y="175.26"/>
 <instance part="U$2" gate="G$1" x="78.74" y="185.42"/>
 <instance part="GND23" gate="1" x="7.62" y="22.86"/>
@@ -5549,9 +5549,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U1" gate="A" pin="ACTIVE"/>
 <wire x1="190.5" y1="45.72" x2="180.34" y2="45.72" width="0.1524" layer="91"/>
 <label x="180.34" y="45.72" size="1.778" layer="95"/>
-<pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="180.34" y1="45.72" x2="180.34" y2="0" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="0" x2="170.18" y2="0" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U2" gate="U1" pin="PB7"/>
@@ -5602,6 +5599,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U1" gate="A" pin="RDYN"/>
 <wire x1="220.98" y1="30.48" x2="220.98" y2="22.86" width="0.1524" layer="91"/>
 <label x="220.98" y="22.86" size="1.778" layer="95" rot="R90"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="223.52" y1="22.86" x2="220.98" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U2" gate="U1" pin="PE6"/>
@@ -5720,7 +5719,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="+3V1" gate="G$1" pin="3V3"/>
 <pinref part="R10" gate="G$1" pin="2"/>
-<wire x1="170.18" y1="12.7" x2="170.18" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="25.4" x2="233.68" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="VDD@1"/>
