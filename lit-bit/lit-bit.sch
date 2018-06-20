@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -4688,7 +4688,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U6" library="SCADA_CUSTOM_LIBRARY" deviceset="MCP7940N" device=""/>
 <part name="J2" library="SCADA_CUSTOM_LIBRARY" deviceset="USB_MICRO_B_SMD_FEMALE" device=""/>
 <part name="J3" library="SCADA_CUSTOM_LIBRARY" deviceset="CONN_03X2" device="SMT" value="ISP"/>
-<part name="+3V12" library="SCADA_CUSTOM_LIBRARY" deviceset="3V3" device=""/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U4" library="SCADA_CUSTOM_LIBRARY" deviceset="ADXL345" device=""/>
 <part name="C11" library="SCADA_CUSTOM_LIBRARY" deviceset="CAP_NONPOL" device="0603" value="100nF"/>
@@ -4767,6 +4766,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP4" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NO" device="_SILK" value="miso"/>
 <part name="R3" library="SCADA_CUSTOM_LIBRARY" deviceset="RES-0603" device="" value="22"/>
 <part name="R4" library="SCADA_CUSTOM_LIBRARY" deviceset="RES-0603" device="" value="22"/>
+<part name="+3V2" library="SCADA_CUSTOM_LIBRARY" deviceset="3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4842,7 +4842,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U6" gate="G$1" x="2.54" y="76.2"/>
 <instance part="J2" gate="G$1" x="22.86" y="165.1" rot="MR0"/>
 <instance part="J3" gate="G$1" x="91.44" y="15.24"/>
-<instance part="+3V12" gate="G$1" x="99.06" y="25.4"/>
 <instance part="GND20" gate="1" x="99.06" y="7.62"/>
 <instance part="U4" gate="G$1" x="10.16" y="111.76"/>
 <instance part="C11" gate="G$1" x="35.56" y="93.98"/>
@@ -4921,6 +4920,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="JP4" gate="G$1" x="223.52" y="12.7" rot="R90"/>
 <instance part="R3" gate="G$1" x="73.66" y="78.74"/>
 <instance part="R4" gate="G$1" x="68.58" y="83.82"/>
+<instance part="+3V2" gate="G$1" x="99.06" y="22.86"/>
 </instances>
 <busses>
 </busses>
@@ -5522,13 +5522,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U6" gate="G$1" pin="X2"/>
 </segment>
 </net>
-<net name="N$26" class="0">
-<segment>
-<pinref part="J3" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="17.78" x2="99.06" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="+3V12" gate="G$1" pin="3V3"/>
-</segment>
-</net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="C15" gate="G$1" pin="2"/>
@@ -5814,6 +5807,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="JP1" gate="A" pin="3"/>
 <wire x1="15.24" y1="17.78" x2="-2.54" y2="17.78" width="0.1524" layer="91"/>
 <junction x="15.24" y="17.78"/>
+</segment>
+<segment>
+<pinref part="+3V2" gate="G$1" pin="3V3"/>
+<pinref part="J3" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="20.32" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AVDD" class="0">
