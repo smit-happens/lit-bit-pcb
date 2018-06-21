@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -4687,8 +4687,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U5" library="SCADA_CUSTOM_LIBRARY" deviceset="S-1335M33" device="" value="S-1335"/>
 <part name="U6" library="SCADA_CUSTOM_LIBRARY" deviceset="MCP7940N" device=""/>
 <part name="J2" library="SCADA_CUSTOM_LIBRARY" deviceset="USB_MICRO_B_SMD_FEMALE" device=""/>
-<part name="J3" library="SCADA_CUSTOM_LIBRARY" deviceset="CONN_03X2" device="SMT" value="ISP"/>
-<part name="+3V12" library="SCADA_CUSTOM_LIBRARY" deviceset="3V3" device=""/>
+<part name="J3" library="SCADA_CUSTOM_LIBRARY" deviceset="CONN_03X2" device="2X3_SILK_MALE_PTH" value="ISP"/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U4" library="SCADA_CUSTOM_LIBRARY" deviceset="ADXL345" device=""/>
 <part name="C11" library="SCADA_CUSTOM_LIBRARY" deviceset="CAP_NONPOL" device="0603" value="100nF"/>
@@ -4767,6 +4766,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP4" library="SparkFun-Jumpers" deviceset="JUMPER-SMT_2_NO" device="_SILK" value="miso"/>
 <part name="R3" library="SCADA_CUSTOM_LIBRARY" deviceset="RES-0603" device="" value="22"/>
 <part name="R4" library="SCADA_CUSTOM_LIBRARY" deviceset="RES-0603" device="" value="22"/>
+<part name="+3V2" library="SCADA_CUSTOM_LIBRARY" deviceset="3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4774,7 +4774,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="12.7" y="175.26" size="1.778" layer="91">usb plug</text>
 <text x="73.66" y="190.5" size="1.778" layer="91">LiPo charging</text>
 <text x="139.7" y="185.42" size="1.778" layer="91">3.3v regulator</text>
-<text x="-12.7" y="68.58" size="1.778" layer="91">Battery backup?</text>
 <text x="7.62" y="93.98" size="1.778" layer="91">RTC</text>
 <text x="10.16" y="139.7" size="1.778" layer="91">Accelerometer</text>
 <text x="5.08" y="58.42" size="1.778" layer="91">EEPROM</text>
@@ -4842,7 +4841,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U6" gate="G$1" x="2.54" y="76.2"/>
 <instance part="J2" gate="G$1" x="22.86" y="165.1" rot="MR0"/>
 <instance part="J3" gate="G$1" x="91.44" y="15.24"/>
-<instance part="+3V12" gate="G$1" x="99.06" y="25.4"/>
 <instance part="GND20" gate="1" x="99.06" y="7.62"/>
 <instance part="U4" gate="G$1" x="10.16" y="111.76"/>
 <instance part="C11" gate="G$1" x="35.56" y="93.98"/>
@@ -4911,8 +4909,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$8" gate="G$1" x="109.22" y="193.04"/>
 <instance part="3V3" gate="1" x="165.1" y="177.8" rot="R270"/>
 <instance part="SPR" gate="1" x="124.46" y="81.28" rot="R270"/>
-<instance part="R10" gate="G$1" x="170.18" y="5.08" rot="R90"/>
-<instance part="+3V1" gate="G$1" x="170.18" y="15.24"/>
+<instance part="R10" gate="G$1" x="228.6" y="22.86"/>
+<instance part="+3V1" gate="G$1" x="233.68" y="27.94"/>
 <instance part="U$1" gate="G$1" x="33.02" y="175.26"/>
 <instance part="U$2" gate="G$1" x="78.74" y="185.42"/>
 <instance part="GND23" gate="1" x="7.62" y="22.86"/>
@@ -4921,6 +4919,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="JP4" gate="G$1" x="223.52" y="12.7" rot="R90"/>
 <instance part="R3" gate="G$1" x="73.66" y="78.74"/>
 <instance part="R4" gate="G$1" x="68.58" y="83.82"/>
+<instance part="+3V2" gate="G$1" x="99.06" y="22.86"/>
 </instances>
 <busses>
 </busses>
@@ -5455,7 +5454,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="114.3" y1="190.5" x2="109.22" y2="190.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VUSB" class="1">
+<net name="VUSB" class="0">
 <segment>
 <pinref part="D1" gate="G$1" pin="RA"/>
 <wire x1="76.2" y1="147.32" x2="76.2" y2="144.78" width="0.1524" layer="91"/>
@@ -5522,13 +5521,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U6" gate="G$1" pin="X2"/>
 </segment>
 </net>
-<net name="N$26" class="0">
-<segment>
-<pinref part="J3" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="17.78" x2="99.06" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="+3V12" gate="G$1" pin="3V3"/>
-</segment>
-</net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="C15" gate="G$1" pin="2"/>
@@ -5549,9 +5541,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U1" gate="A" pin="ACTIVE"/>
 <wire x1="190.5" y1="45.72" x2="180.34" y2="45.72" width="0.1524" layer="91"/>
 <label x="180.34" y="45.72" size="1.778" layer="95"/>
-<pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="180.34" y1="45.72" x2="180.34" y2="0" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="0" x2="170.18" y2="0" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U2" gate="U1" pin="PB7"/>
@@ -5602,6 +5591,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U1" gate="A" pin="RDYN"/>
 <wire x1="220.98" y1="30.48" x2="220.98" y2="22.86" width="0.1524" layer="91"/>
 <label x="220.98" y="22.86" size="1.778" layer="95" rot="R90"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="223.52" y1="22.86" x2="220.98" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U2" gate="U1" pin="PE6"/>
@@ -5720,7 +5711,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="+3V1" gate="G$1" pin="3V3"/>
 <pinref part="R10" gate="G$1" pin="2"/>
-<wire x1="170.18" y1="12.7" x2="170.18" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="25.4" x2="233.68" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U1" gate="A" pin="VDD@1"/>
@@ -5815,6 +5806,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="JP1" gate="A" pin="3"/>
 <wire x1="15.24" y1="17.78" x2="-2.54" y2="17.78" width="0.1524" layer="91"/>
 <junction x="15.24" y="17.78"/>
+</segment>
+<segment>
+<pinref part="+3V2" gate="G$1" pin="3V3"/>
+<pinref part="J3" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="20.32" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="AVDD" class="0">
@@ -5976,6 +5972,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="202,1,205.74,30.48,U1,RXD,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
