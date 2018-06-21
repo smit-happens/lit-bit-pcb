@@ -4687,7 +4687,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U5" library="SCADA_CUSTOM_LIBRARY" deviceset="S-1335M33" device="" value="S-1335"/>
 <part name="U6" library="SCADA_CUSTOM_LIBRARY" deviceset="MCP7940N" device=""/>
 <part name="J2" library="SCADA_CUSTOM_LIBRARY" deviceset="USB_MICRO_B_SMD_FEMALE" device=""/>
-<part name="J3" library="SCADA_CUSTOM_LIBRARY" deviceset="CONN_03X2" device="SMT" value="ISP"/>
+<part name="J3" library="SCADA_CUSTOM_LIBRARY" deviceset="CONN_03X2" device="2X3_SILK_MALE_PTH" value="ISP"/>
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U4" library="SCADA_CUSTOM_LIBRARY" deviceset="ADXL345" device=""/>
 <part name="C11" library="SCADA_CUSTOM_LIBRARY" deviceset="CAP_NONPOL" device="0603" value="100nF"/>
@@ -4774,7 +4774,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="12.7" y="175.26" size="1.778" layer="91">usb plug</text>
 <text x="73.66" y="190.5" size="1.778" layer="91">LiPo charging</text>
 <text x="139.7" y="185.42" size="1.778" layer="91">3.3v regulator</text>
-<text x="-12.7" y="68.58" size="1.778" layer="91">Battery backup?</text>
 <text x="7.62" y="93.98" size="1.778" layer="91">RTC</text>
 <text x="10.16" y="139.7" size="1.778" layer="91">Accelerometer</text>
 <text x="5.08" y="58.42" size="1.778" layer="91">EEPROM</text>
@@ -5455,7 +5454,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="114.3" y1="190.5" x2="109.22" y2="190.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="VUSB" class="1">
+<net name="VUSB" class="0">
 <segment>
 <pinref part="D1" gate="G$1" pin="RA"/>
 <wire x1="76.2" y1="147.32" x2="76.2" y2="144.78" width="0.1524" layer="91"/>
@@ -5973,6 +5972,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="202,1,205.74,30.48,U1,RXD,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
